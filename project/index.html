@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enkrypt Enterprise - Send Money to India at Zero Fee</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="nav">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">Enkrypt Enterprise</span>
+                </div>
+                <div class="nav-buttons">
+                    <button class="btn-outline" onclick="window.location.href='login.html'">Login</button>
+                    <button class="btn-primary" onclick="window.location.href='signup.html'">Sign Up</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <h1 class="hero-title">
+                        Send money to India 🇮🇳<br>
+                        at zero fee.
+                    </h1>
+                    
+                    <div class="feature-badges">
+                        <span class="badge badge-yellow">✨ Zero Fee</span>
+                        <span class="badge badge-blue">📊 Google FX rates</span>
+                        <span class="badge badge-green">⚡ Quick Transfers</span>
+                    </div>
+
+                    <button class="btn-cta" onclick="scrollToSection('get-started')">
+                        Get Started
+                        <svg class="arrow-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </button>
+                </div>
+
+                <!-- Transfer Calculator -->
+                <div class="calculator">
+                    <div class="fx-rate">
+                        <span>⚡</span>
+                        <span>Google FX rate: ₹1.00 = <span id="usdtRate">0.0115</span> USDT</span>
+                        <div class="info-icon">ℹ</div>
+                    </div>
+
+                    <div class="calculator-content">
+                        <div class="input-section">
+                            <label>You send</label>
+                            <div class="amount-input">
+                                <input type="number" id="sendAmount" value="1000" oninput="calculateExchange()">
+                                <div class="currency-selector">
+                                    <span class="flag">🇮🇳</span>
+                                    <span>INR</span>
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M6 9l6 6 6-6"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="exchange-details">
+                            <div class="detail-row">
+                                <span>Exchange rate</span>
+                                <span>₹1.00 = <span id="displayRate">0.0115</span> USDT <span class="rate-highlight">₹87.08</span></span>
+                            </div>
+                            <div class="detail-row">
+                                <span>Enkrypt Enterprise fee (0%)</span>
+                                <span>₹0.00</span>
+                            </div>
+                            <div class="detail-row">
+                                <span>Transfer time ⓘ</span>
+                                <span>Within 24 hours</span>
+                            </div>
+                        </div>
+
+                        <div class="input-section">
+                            <label>Recipient gets</label>
+                            <div class="amount-display">
+                                <span class="receive-amount" id="receiveAmount">11.50</span>
+                                <div class="currency-selector">
+                                    <div class="usdt-icon">₮</div>
+                                    <span>USDT</span>
+                                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor">
+                                        <path d="M6 9l6 6 6-6"/>
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="welcome-bonus">
+                            <div class="bonus-icon">🎁</div>
+                            <div class="bonus-content">
+                                <div class="bonus-title">Welcome Bonus:</div>
+                                <div class="bonus-text">₹0.50 Above Google Rate until the end of June!</div>
+                            </div>
+                        </div>
+
+                        <button class="btn-transfer" onclick="window.location.href='signup.html'">Transfer Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners Section -->
+    <section class="partners">
+        <div class="container">
+            <div class="partners-grid">
+                <div class="partner">polygon</div>
+                <div class="partner">Deeprue.tech</div>
+                <div class="partner">persona</div>
+                <div class="partner">HYPERVERGE</div>
+                <div class="partner">SOLANA</div>
+                <div class="partner">tether</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Section -->
+    <section id="why-choose" class="why-choose">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">✨ Our Promise</div>
+                <h2 class="section-title">Why Choose Enkrypt Enterprise?</h2>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <circle cx="50" cy="50" r="40" fill="#014666"/>
+                            <path d="M30 50 L45 65 L70 35" stroke="white" stroke-width="4" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Zero Fee</h3>
+                    <p>Send money globally at Zero fee</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <rect x="20" y="30" width="60" height="40" rx="5" fill="#014666"/>
+                            <circle cx="50" cy="50" r="8" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3>Best Rates</h3>
+                    <p>Get the ex-rates you see on Google</p>
+                </div>
+
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <rect x="30" y="20" width="40" height="60" rx="5" fill="#014666"/>
+                            <circle cx="50" cy="40" r="6" fill="white"/>
+                            <rect x="40" y="55" width="20" height="3" fill="white"/>
+                            <rect x="35" y="65" width="30" height="3" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3>Quick Transfer</h3>
+                    <p>Get money within 24 hours after your fund is received</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section id="get-started" class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">✨ How it works</div>
+                <h2 class="section-title">Get Started Quickly ⚡</h2>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">01</div>
+                    <h3>Sign Up</h3>
+                    <p>Create a free account with email & phone number</p>
+                    <div class="step-preview">
+                        <div class="form-preview">
+                            <div class="form-header">Create Account</div>
+                            <div class="form-field">
+                                <label>Your Name</label>
+                                <input type="text" placeholder="Ex: John Doe" readonly>
+                            </div>
+                            <div class="form-field">
+                                <label>Your Email</label>
+                                <input type="email" placeholder="Ex: john@gmail.com" readonly>
+                            </div>
+                            <button class="form-btn">Create account</button>
+                            <div class="form-footer">Already have an account? Login</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">02</div>
+                    <h3>Verify KYC</h3>
+                    <p>Verify your identity within just a few seconds</p>
+                    <div class="step-preview">
+                        <div class="kyc-preview">
+                            <div class="kyc-header">
+                                <div class="avatar">JD</div>
+                                <span>John Doe 👋</span>
+                                <div class="time">⏰ 📱</div>
+                            </div>
+                            <div class="kyc-step active">
+                                <div class="kyc-icon">🆔</div>
+                                <span>Verify yourself</span>
+                                <button class="kyc-btn">Start now</button>
+                            </div>
+                            <div class="kyc-step progress">
+                                <div class="kyc-icon">📋</div>
+                                <span>KYC in progress</span>
+                                <span class="status">Almost done! ⏳</span>
+                            </div>
+                            <div class="kyc-step completed">
+                                <div class="kyc-icon">✅</div>
+                                <span>Your KYC is done! 🎉</span>
+                                <span class="status">Send money abroad easily!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">03</div>
+                    <h3>Send Money</h3>
+                    <p>Add recipient details and send money</p>
+                    <div class="step-preview">
+                        <div class="send-preview">
+                            <div class="send-header">
+                                <span>⚡ Google FX rate: ₹1.00 = 0.0115 USDT</span>
+                            </div>
+                            <div class="send-section">
+                                <label>You send</label>
+                                <div class="send-amount">
+                                    <span>1,000.00</span>
+                                    <div class="currency">🇮🇳 INR</div>
+                                </div>
+                            </div>
+                            <div class="send-section">
+                                <label>Recipient gets</label>
+                                <div class="receive-options">
+                                    <div class="option">₮ USDT</div>
+                                    <div class="option">🇪🇺 EUR</div>
+                                </div>
+                            </div>
+                            <div class="send-section">
+                                <label>Our rates</label>
+                                <div class="rates">
+                                    <div class="rate-item">
+                                        <span>💸 Transfer fee:</span>
+                                        <span>0.00 INR</span>
+                                    </div>
+                                    <div class="rate-item">
+                                        <span>⏱️ Transfer time:</span>
+                                        <span>Within 24 hours</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="send-btn">Send now</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Countries Section -->
+    <section id="countries" class="countries">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">✨ Coming Soon</div>
+                <h2 class="section-title">Transfer to 40+ countries 🚀</h2>
+            </div>
+
+            <div class="world-map">
+                <div class="map-container">
+                    <!-- North America -->
+                    <div class="country-flag" style="top: 25%; left: 20%;" data-country="USA">🇺🇸</div>
+                    <div class="country-flag" style="top: 35%; left: 15%;" data-country="Canada">🇨🇦</div>
+                    <div class="country-flag" style="top: 45%; left: 18%;" data-country="Mexico">🇲🇽</div>
+                    
+                    <!-- South America -->
+                    <div class="country-flag" style="top: 65%; left: 25%;" data-country="Brazil">🇧🇷</div>
+                    <div class="country-flag" style="top: 70%; left: 22%;" data-country="Argentina">🇦🇷</div>
+                    <div class="country-flag" style="top: 75%; left: 20%;" data-country="Chile">🇨🇱</div>
+                    
+                    <!-- Europe -->
+                    <div class="country-flag" style="top: 20%; left: 50%;" data-country="UK">🇬🇧</div>
+                    <div class="country-flag" style="top: 25%; left: 52%;" data-country="Germany">🇩🇪</div>
+                    <div class="country-flag" style="top: 30%; left: 55%;" data-country="France">🇫🇷</div>
+                    <div class="country-flag" style="top: 35%; left: 48%;" data-country="Spain">🇪🇸</div>
+                    <div class="country-flag" style="top: 28%; left: 58%;" data-country="Poland">🇵🇱</div>
+                    
+                    <!-- Africa -->
+                    <div class="country-flag" style="top: 45%; left: 52%;" data-country="Nigeria">🇳🇬</div>
+                    <div class="country-flag" style="top: 50%; left: 55%;" data-country="Kenya">🇰🇪</div>
+                    <div class="country-flag" style="top: 65%; left: 50%;" data-country="South Africa">🇿🇦</div>
+                    <div class="country-flag" style="top: 40%; left: 48%;" data-country="Ghana">🇬🇭</div>
+                    
+                    <!-- Asia -->
+                    <div class="country-flag" style="top: 30%; left: 75%;" data-country="India">🇮🇳</div>
+                    <div class="country-flag" style="top: 25%; left: 80%;" data-country="China">🇨🇳</div>
+                    <div class="country-flag" style="top: 20%; left: 85%;" data-country="Japan">🇯🇵</div>
+                    <div class="country-flag" style="top: 35%; left: 82%;" data-country="South Korea">🇰🇷</div>
+                    <div class="country-flag" style="top: 50%; left: 85%;" data-country="Philippines">🇵🇭</div>
+                    <div class="country-flag" style="top: 45%; left: 78%;" data-country="Thailand">🇹🇭</div>
+                    <div class="country-flag" style="top: 55%; left: 80%;" data-country="Indonesia">🇮🇩</div>
+                    <div class="country-flag" style="top: 40%; left: 72%;" data-country="UAE">🇦🇪</div>
+                    
+                    <!-- Oceania -->
+                    <div class="country-flag" style="top: 70%; left: 85%;" data-country="Australia">🇦🇺</div>
+                    <div class="country-flag" style="top: 65%; left: 88%;" data-country="New Zealand">🇳🇿</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Section -->
+    <section id="security" class="security">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">✨ Secure by design</div>
+                <h2 class="section-title">100% Secure & Compliant</h2>
+            </div>
+
+            <div class="security-grid">
+                <div class="security-card">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <rect x="25" y="40" width="50" height="35" rx="5" fill="#014666"/>
+                            <path d="M35 40 V30 C35 20 42 15 50 15 C58 15 65 20 65 30 V40" stroke="#014666" stroke-width="3" fill="none"/>
+                            <circle cx="50" cy="57" r="3" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3>SSL Encryption</h3>
+                    <p>Institutional grade encryption with end-to-end data protection.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <path d="M50 15 L65 25 L65 55 C65 65 50 75 50 75 C50 75 35 65 35 55 L35 25 Z" fill="#014666"/>
+                            <path d="M42 50 L48 56 L58 40" stroke="white" stroke-width="3" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>Secure Transfers</h3>
+                    <p>24×7 continuous risk monitoring with real-time fraud detection.</p>
+                </div>
+
+                <div class="security-card">
+                    <div class="security-icon">
+                        <svg viewBox="0 0 100 100" fill="none">
+                            <rect x="20" y="30" width="60" height="50" rx="5" fill="#014666"/>
+                            <rect x="30" y="20" width="40" height="15" rx="7" fill="#014666"/>
+                            <rect x="25" y="40" width="50" height="3" fill="white"/>
+                            <rect x="25" y="50" width="50" height="3" fill="white"/>
+                            <rect x="25" y="60" width="50" height="3" fill="white"/>
+                        </svg>
+                    </div>
+                    <h3>Fully Compliant</h3>
+                    <p>Funds are handled by regulated financial institutions.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="faq">
+        <div class="container">
+            <div class="section-header">
+                <div class="section-badge">✨ Frequently Asked Questions</div>
+                <h2 class="section-title">Got questions? We got answers! 🙋</h2>
+            </div>
+
+            <div class="faq-tabs">
+                <button class="faq-tab active" data-tab="us">US 🇺🇸</button>
+                <button class="faq-tab" data-tab="eu">EU 🇪🇺</button>
+            </div>
+
+            <div class="faq-content">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>How to send money?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>To send money through Enkrypt Enterprise, simply sign up for an account, complete your KYC verification, add recipient details, and initiate the transfer. The process is quick and secure.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What are the payment methods?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>We accept various payment methods including bank transfers, debit cards, and digital wallets. All transactions are processed securely through our regulated partners.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What is the transfer time?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Most transfers are completed within 24 hours. The exact time depends on the destination country and payment method used.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What is the transfer fee?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Enkrypt Enterprise offers zero transfer fees for most transactions. We make money through competitive exchange rates while still offering better rates than traditional banks.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>What is the transfer limit?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>Transfer limits vary based on your verification level and destination country. After completing full KYC, you can transfer up to $50,000 per transaction.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFAQ(this)">
+                        <span>Which documents are required for KYC?</span>
+                        <span class="faq-toggle">+</span>
+                    </div>
+                    <div class="faq-answer">
+                        <p>For KYC verification, you'll need a government-issued photo ID (passport, driver's license, or national ID) and proof of address (utility bill or bank statement not older than 3 months).</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="logo">
+                        <div class="logo-icon"></div>
+                        <span class="logo-text">Enkrypt Enterprise</span>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Learn More</h4>
+                    <ul>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#send-money">Send Money</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                        <li><a href="#terms">Terms of Service</a></li>
+                        <li><a href="#contact">Contact us</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-section">
+                    <h4>USA 🇺🇸</h4>
+                    <div class="address">
+                        <p>30 N, Gould St</p>
+                        <p>Ste R, Sheridan</p>
+                        <p>Wyoming 82801</p>
+                    </div>
+                </div>
+
+                <div class="footer-section">
+                    <h4>Social</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link facebook">📘</a>
+                        <a href="#" class="social-link linkedin">💼</a>
+                        <a href="#" class="social-link youtube">📺</a>
+                        <a href="#" class="social-link whatsapp">💬</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-disclaimer">
+                <p>Enkrypt Enterprise LLC is a financial technology company. Our product and services are offered in partnership with regulated and licensed financial institutions in each jurisdictions that we operate in. Client(s) deal directly with our regulated partners through the platform provided by Enkrypt Enterprise LLC.</p>
+                <p>For any queries or grievances, please write to us at <a href="mailto:compliance@enkryptenterprise.com">compliance@enkryptenterprise.com</a></p>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2024 Enkrypt Enterprise LLC. All Rights Reserved.</p>
+                <div class="footer-links">
+                    <a href="#terms">Terms of Service</a>
+                    <a href="#privacy">Privacy Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <div class="whatsapp-float" onclick="window.open('https://wa.me/1234567890', '_blank')">
+        <svg viewBox="0 0 24 24" fill="currentColor">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.465 3.516"/>
+        </svg>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Money - Enkrypt Enterprise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="transfer-container">
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="nav">
+                    <div class="logo">
+                        <div class="logo-icon"></div>
+                        <span class="logo-text">Enkrypt Enterprise</span>
+                    </div>
+                    <div class="nav-buttons">
+                        <button class="btn-outline" onclick="window.location.href='dashboard.html'">Dashboard</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <main class="transfer-main">
+            <div class="container">
+                <div class="transfer-header">
+                    <h1>Send Money</h1>
+                    <p>Transfer money quickly and securely</p>
+                </div>
+
+                <div class="transfer-form-container">
+                    <form class="transfer-form" onsubmit="handleTransfer(event)">
+                        <div class="form-section">
+                            <h3>Transfer Details</h3>
+                            
+                            <div class="form-group">
+                                <label>You Send</label>
+                                <div class="amount-input-group">
+                                    <input type="number" id="sendAmount" placeholder="1000" required>
+                                    <select id="sendCurrency">
+                                        <option value="INR">🇮🇳 INR</option>
+                                        <option value="USD">🇺🇸 USD</option>
+                                        <option value="EUR">🇪🇺 EUR</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Recipient Gets</label>
+                                <div class="amount-input-group">
+                                    <input type="number" id="receiveAmount" placeholder="11.50" readonly>
+                                    <select id="receiveCurrency">
+                                        <option value="USDT">₮ USDT</option>
+                                        <option value="USD">🇺🇸 USD</option>
+                                        <option value="EUR">🇪🇺 EUR</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="form-section">
+                            <h3>Recipient Information</h3>
+                            
+                            <div class="form-group">
+                                <label>Recipient Name</label>
+                                <input type="text" placeholder="Enter recipient's full name" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Recipient Email</label>
+                                <input type="email" placeholder="Enter recipient's email" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Wallet Address (for USDT)</label>
+                                <input type="text" placeholder="Enter USDT wallet address" required>
+                            </div>
+                        </div>
+
+                        <div class="transfer-summary">
+                            <h3>Transfer Summary</h3>
+                            <div class="summary-row">
+                                <span>Amount to send:</span>
+                                <span>₹1,000.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Transfer fee:</span>
+                                <span>₹0.00</span>
+                            </div>
+                            <div class="summary-row">
+                                <span>Exchange rate:</span>
+                                <span>₹1.00 = 0.0115 USDT</span>
+                            </div>
+                            <div class="summary-row total">
+                                <span>Recipient gets:</span>
+                                <span>11.50 USDT</span>
+                            </div>
+                        </div>
+
+                        <button type="submit" class="btn-transfer-large">Send Money Now</button>
+                    </form>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
