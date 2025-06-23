@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Verify OTP - Enkrypt Enterprise</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-header">
+                <div class="logo">
+                    <div class="logo-icon"></div>
+                    <span class="logo-text">Enkrypt Enterprise</span>
+                </div>
+                <h1>Verify Your Account</h1>
+                <p id="otpMessage">We've sent a 6-digit code to your email</p>
+            </div>
+
+            <form class="auth-form" onsubmit="handleOTPVerification(event)">
+                <div class="otp-container">
+                    <div class="otp-inputs">
+                        <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 0)" onkeydown="handleBackspace(this, 0)">
+                        <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 1)" onkeydown="handleBackspace(this, 1)">
+                        <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 2)" onkeydown="handleBackspace(this, 2)">
+                        <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 3)" onkeydown="handleBackspace(this, 3)">
+                        <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 4)" onkeydown="handleBackspace(this, 4)">
+                        <input type="text" class="otp-input" maxlength="1" oninput="moveToNext(this, 5)" onkeydown="handleBackspace(this, 5)">
+                    </div>
+                </div>
+
+                <div class="otp-timer">
+                    <p>Code expires in: <span id="timer">05:00</span></p>
+                </div>
+
+                <button type="submit" class="auth-btn" id="verifyBtn">Verify Code</button>
+                
+                <div class="resend-section">
+                    <p>Didn't receive the code?</p>
+                    <button type="button" class="resend-btn" onclick="resendOTP()" id="resendBtn" disabled>
+                        Resend Code (<span id="resendTimer">60</span>s)
+                    </button>
+                </div>
+            </form>
+
+            <div class="auth-footer">
+                <a href="login.html" class="back-home">← Back to Login</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="otp.js"></script>
+</body>
+</html>
